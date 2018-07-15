@@ -51,6 +51,9 @@
     width: 1px;
     white-space: nowrap;
 }
+#rectangleTopRightButtons button{
+    margin: 0 5px;
+}
 textarea {
     border: none;
     width: 100%;

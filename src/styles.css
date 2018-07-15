@@ -11,6 +11,9 @@ html, body{
 
 #outletWrapper {
     height: calc(100% - 50px);
+    display: inline-block;
+    width: 100%;
+    position: absolute;
 }
 
 .dispNone{

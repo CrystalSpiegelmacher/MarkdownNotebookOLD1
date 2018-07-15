@@ -20,12 +20,12 @@ export class ReaderComponent implements OnInit {
     this.getFiles();
   }
   
-  //========================================================================= TOGGLE EDIT MODE
+  //========================================================================================================  TOGGLE EDIT MODE
   toggleEditMode(){
     this.$READER.editMode = !this.$READER.editMode;
   }
   
-  //========================================================================= SAVE
+  //========================================================================================================  SAVE
   save(){
     this.dataService.saveMarkdown(this.$READER.currFile.id, this.$READER.currFile.MD, this.$READER.currFile.extra.title).subscribe();
     this.toggleEditMode();
@@ -33,7 +33,12 @@ export class ReaderComponent implements OnInit {
     //this.$READER.listFileClick(this.$READER.currFile.id, this.$READER.currFile.index);
   }
 
-  //========================================================================= GET FOLDERS
+  //========================================================================================================  GET FOLDERS
+  viewProperties(){
+    console.log("viewProperties");
+  }
+
+  //========================================================================================================  GET FOLDERS
   getFolders(){
     this.dataService.getFolders().subscribe(
       (data: any) => {
@@ -43,7 +48,7 @@ export class ReaderComponent implements OnInit {
   }
 
 
-  //========================================================================= GET FILES
+  //========================================================================================================  GET FILES
   getFiles(){
     this.dataService.getFiles().subscribe(
       (data: any) => {
@@ -53,12 +58,12 @@ export class ReaderComponent implements OnInit {
     );
   }
 
-  //========================================================================= LIST FOLDER CLICK
+  //========================================================================================================  LIST FOLDER CLICK
   listFolderClick(id, index){
     console.log("You clicked a FOLDER with the id of " + id);
   }
 
-  //========================================================================= LIST FILE CLICK
+  //========================================================================================================  LIST FILE CLICK
   listFileClick(id, index){
 
     this.$READER.currFile.id = id;

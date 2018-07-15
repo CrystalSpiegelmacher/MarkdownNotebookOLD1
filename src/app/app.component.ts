@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   }
 
 
-  //========================================================================= CONSOLE.LOG $STATE
+  //========================================================================================================  CONSOLE.LOG $STATE
   consoleLogState(){
     console.log(this.dataService.$STATE);
   }

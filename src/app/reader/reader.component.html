@@ -27,10 +27,14 @@
     </td>
 
     <td id="rectangleTopRightButtons">
+      
+      <span [ngClass]="{'dispNone': !$READER.editMode}">
+        <button (click)="save()">Save</button>
+
+        <button (click)="viewProperties()">Properties</button>
+      </span>
 
       <button (click)="toggleEditMode()" [ngClass]="{'buttonSelected': $READER.editMode}">Edit</button>
-      
-      <button (click)="save()">Save</button>
 
     </td>
 

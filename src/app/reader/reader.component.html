@@ -1,14 +1,14 @@
 
-<!-- <table id="layoutTable">
+<table id="layoutTable">
   <tr>
     <td rowspan=2 id="sidebar">
 
-      <div id="list"> -->
+      <div id="list">
 
           <div class="folder" *ngFor="let folder of $READER.folders; let index=index" (click)="listFolderClick(folder.id, index)">
               {{folder.name}}
           </div>
-          <!-- <hr>
+          <hr>
           <div class="file" *ngFor="let file of $READER.files; let index=index" (click)="listFileClick(file.id, index)">
               {{file.title}}
           </div>
@@ -39,4 +39,4 @@
     </td>
 
   </tr>
-</table> -->
+</table>

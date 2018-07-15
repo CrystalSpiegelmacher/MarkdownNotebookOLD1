@@ -1,0 +1,11 @@
+
+nav {
+    height: 50px;
+    background-color: lightgray;
+}
+#navbarRight{
+    float: right;
+}
+#title{
+    font-size: 1.4em;
+}

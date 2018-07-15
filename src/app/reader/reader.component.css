@@ -1,0 +1,45 @@
+
+#layoutTable{
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+}
+#layoutTable tr td{
+    outline: 1px solid black
+}
+#sidebar{
+    width: 200px;
+    background-color: #f3f2f2;
+}
+#titlebar{
+    height: 30px;
+}
+#rectangle, #sidebar{
+    vertical-align: top;
+    margin:0;
+    padding:0;
+}
+
+#list{
+    /* padding: 5px; */
+}
+.folder{
+    font-weight: bold;
+    cursor: pointer;
+    margin: 5px;
+}
+.file{
+    cursor: pointer;
+    margin: 5px; 
+}
+#html{
+    padding: 5px;
+}
+textarea {
+    border: none;
+    width: 100%;
+    height: calc(100% - 5px); 
+    box-sizing: border-box;
+    margin:0;
+    padding:5px;
+}

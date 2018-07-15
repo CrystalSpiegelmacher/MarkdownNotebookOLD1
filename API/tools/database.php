@@ -89,4 +89,3 @@ function RunSQL($SQL, $db) {
 //     return $arr;
 // }
 
-?>

@@ -8,9 +8,11 @@ import { HttpClient } from '@angular/common/http';
 export class DataService {
 
 ///////////////////////////////////////////////////////////////////////////////////////////// STATE
+
   $STATE:any = {
     "app":{
-      "title":"Markdown Notebook"
+      "title":"Markdown Notebook", 
+      "debug":false, 
     }, 
     "home":{
 
@@ -20,6 +22,7 @@ export class DataService {
       "editMode":false, 
     }
   }
+
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -60,12 +63,17 @@ export class DataService {
 
 
 
-  ///////////////////////////////////////////////////////////////////////////////////////////// UTILITY METHODS
+///////////////////////////////////////////////////////////////////////////////////////////// UTILITY METHODS
+
   METHOD(){
     console.log("This function is an unassigned function in the dataservice.")
   }
 
 
-
+  getQSValue(name){
+    var reg = new RegExp( '[?&]' + name + '=([^&#]*)', 'i' );
+    var string = reg.exec(window.location.href);
+    return string ? string[1] : null;
+  };
 
 }

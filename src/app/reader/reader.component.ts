@@ -19,7 +19,19 @@ export class ReaderComponent implements OnInit {
     this.getFolders();
     this.getFiles();
   }
-
+  
+  //========================================================================= TOGGLE EDIT MODE
+  toggleEditMode(){
+    this.$READER.editMode = !this.$READER.editMode;
+  }
+  
+  //========================================================================= SAVE
+  save(){
+    this.dataService.saveMarkdown(this.$READER.currFile.id, this.$READER.currFile.MD, this.$READER.currFile.extra.title).subscribe();
+    this.toggleEditMode();
+    
+    //this.$READER.listFileClick(this.$READER.currFile.id, this.$READER.currFile.index);
+  }
 
   //========================================================================= GET FOLDERS
   getFolders(){

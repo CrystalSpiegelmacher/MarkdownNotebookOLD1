@@ -1,4 +1,5 @@
 <?php
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -21,38 +22,48 @@ if(count($URIarr) > 2){
     $param2 = $URIarr[2];
 }
 
+//----------------------------------------------------------------------------------- PAYLOAD
+$payload = file_get_contents('php://input');
 
 
 
 //===================================================================================== GET CONTENT
 if($param1 == "filehtml"){
+
 	$fileId = $param2;
 	$doParse = true;
 	include("./endpoints/content.php");
 //===================================================================================== GET MARKDOWN
 }else if($param1 == "filemd"){
+
 	$fileId = $param2;
 	$doParse = false;
 	include("./endpoints/content.php");
 //===================================================================================== SAVE MARKDOWN
 }else if($param1 == "markdownsave"){
+
 	$fileId = $param2;
 	include("./endpoints/markdownsave.php");
 //===================================================================================== LIST
 }else if($param1 == "files"){
+
 	include("./endpoints/files.php");
 //===================================================================================== FOLDERS
 }else if($param1 == "folders"){
+
 	include("./endpoints/folders.php");
 //===================================================================================== NEW CONTENT SAVE
 }else if($param1 == "newcontentsave"){
+
 	include("./endpoints/newcontentsave.php");
 //===================================================================================== DELETE CONTENT
 }else if($param1 == "deletecontent"){
+
 	$fileId = $param2;
 	include("./endpoints/deletecontent.php");
 //===================================================================================== BOO BOO
 }else{
+	
 	echo "The API doesnt know what that endpoint is.";
 }
 

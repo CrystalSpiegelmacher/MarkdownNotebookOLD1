@@ -1,4 +1,6 @@
 
+
+/*-------------------------------------------------------------------------- LAYOUT TABLE */
 #layoutTable{
     width: 100%;
     height: 100%;
@@ -7,19 +9,13 @@
 #layoutTable tr td{
     outline: 1px solid black
 }
+
+
+/*-------------------------------------------------------------------------- SIDEBAR */
 #sidebar{
     width: 200px;
     background-color: #f3f2f2;
 }
-#titlebar{
-    height: 30px;
-}
-#rectangle, #sidebar{
-    vertical-align: top;
-    margin:0;
-    padding:0;
-}
-
 #list{
     /* padding: 5px; */
 }
@@ -32,8 +28,28 @@
     cursor: pointer;
     margin: 5px; 
 }
-#html{
-    padding: 5px;
+
+
+
+/*-------------------------------------------------------------------------- RECTANGLE (content area) */
+
+#rectangle, #sidebar, #titlebar{
+    vertical-align: top;
+    margin:0;
+    padding:5px;
+}
+
+/*---------------------- TITLE BAR */
+#titlebar{
+    height: 1px;
+}
+#titleInput{
+    width: 99%;
+}
+
+#rectangleTopRightButtons{
+    width: 1px;
+    white-space: nowrap;
 }
 textarea {
     border: none;
@@ -42,4 +58,10 @@ textarea {
     box-sizing: border-box;
     margin:0;
     padding:5px;
+}
+.selectedFile{
+    background-color: lightyellow;
+}
+.file:hover{
+    text-decoration: underline;
 }

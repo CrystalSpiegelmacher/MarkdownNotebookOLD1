@@ -9,8 +9,8 @@
               {{folder.name}}
           </div>
           <hr>
-          <div class="file" *ngFor="let file of $READER.files; let index=index" (click)="listFileClick(file.id, index)">
-              {{file.title}}
+          <div class="file" *ngFor="let file of $READER.files; let index=index" [ngClass]="{'selectedFile':  $READER.currFile.id == file.id}"  (click)="listFileClick(file.id, index)">
+            <!-- {{file.id}}) -->{{file.title}}
           </div>
           <hr>          
 
@@ -22,14 +22,22 @@
 
       <div [ngClass]="{'dispNone': $READER.editMode}" [innerHTML]="$READER.currFile.extra.title"></div>
 
-      <input type="text" [ngClass]="{'dispNone': !$READER.editMode}" [(ngModel)]="$READER.currFile.extra.title">
+      <input id="titleInput" type="text" [ngClass]="{'dispNone': !$READER.editMode}" [(ngModel)]="$READER.currFile.extra.title">
+
+    </td>
+
+    <td id="rectangleTopRightButtons">
+
+      <button (click)="toggleEditMode()" [ngClass]="{'buttonSelected': $READER.editMode}">Edit</button>
+      
+      <button (click)="save()">Save</button>
 
     </td>
 
   </tr>
   <tr>
 
-    <td id="rectangle">
+    <td colspan=2 id="rectangle">
 
       <div [ngClass]="{'dispNone': $READER.editMode}" [innerHTML]="$READER.currFile.HTML"></div>
 

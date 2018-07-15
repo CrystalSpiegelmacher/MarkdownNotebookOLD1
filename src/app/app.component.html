@@ -3,16 +3,14 @@
     <div id="title">
       Welcome to {{$APP.title}}!
     </div>
-  
+
     <a routerLink="/home">Home</a> - 
     <a routerLink="/reader">Reader</a>
   
     <span id="navbarRight">
-        <button (click)="toggleEditMode()" [ngClass]="{'buttonSelected': $READER.editMode}">Edit</button>
+
   
-        <button (click)="save()">Save</button>
-  
-        <button (click)="TESTcallFunctionInReader()">TEST</button>
+        <button *ngIf="$APP.debug" (click)="consoleLogState()">$STATE</button>
   
     </span>
   

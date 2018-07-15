@@ -20,8 +20,13 @@ html, body{
     font-weight: bold;
 }
 
-.red{
+
+.colorRed{
     color:red;
-    border: 1px solid red;
-    background-color: red;
+}
+.colorGreen{
+    color:green;
+}
+.colorBlue{
+    color:blue;
 }

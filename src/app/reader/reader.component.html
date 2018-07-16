@@ -1,6 +1,7 @@
 
 <table id="layoutTable">
   <tr>
+    <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////// SIDEBAR -->
     <td rowspan=2 id="sidebar">
 
       <div id="list">
@@ -12,21 +13,26 @@
           <div class="file" *ngFor="let file of $READER.files; let index=index" [ngClass]="{'selectedFile':  $READER.currFile.id == file.id}"  (click)="listFileClick(file.id, index)">
             <!-- {{file.id}}) -->{{file.title}}
           </div>
-          <hr>          
+          <hr>
+          
+          
+
+          <div id="testDOM"></div>
 
       </div>
 
     </td>
 
-    <td id="titlebar" *ngIf="$READER.currFile.extra">
+    <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////// TITLE BAR -->
+    <td id="titlebar" *ngIf="$READER.currFile.extra" [ngClass]="{'editHighlight': $READER.editMode}">
 
       <div [ngClass]="{'dispNone': $READER.editMode}" [innerHTML]="$READER.currFile.extra.title"></div>
 
       <input id="titleInput" type="text" [ngClass]="{'dispNone': !$READER.editMode}" [(ngModel)]="$READER.currFile.extra.title">
 
     </td>
-
-    <td id="rectangleTopRightButtons">
+    <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////// RECTANGLE TOP RIGHT BUTTONS -->
+    <td id="rectangleTopRightButtons" [ngClass]="{'editHighlight': $READER.editMode}">
       
       <span [ngClass]="{'dispNone': !$READER.editMode}">
         <button (click)="save()">Save</button>
@@ -34,14 +40,14 @@
         <button (click)="viewProperties()">Properties</button>
       </span>
 
-      <button (click)="toggleEditMode()" [ngClass]="{'buttonSelected': $READER.editMode}">Edit</button>
+      <button (click)="toggleEditMode()" [ngClass]="{'buttonSelected colorRed': $READER.editMode}">Edit</button>
 
     </td>
 
   </tr>
   <tr>
-
-    <td colspan=2 id="rectangle">
+    <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////// RECTANGLE -->
+    <td colspan=2 id="rectangle" [ngClass]="{'editHighlight': $READER.editMode}">
 
       <div [ngClass]="{'dispNone': $READER.editMode}" [innerHTML]="$READER.currFile.HTML"></div>
 

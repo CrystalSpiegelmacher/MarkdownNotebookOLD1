@@ -9,7 +9,9 @@
 #layoutTable tr td{
     outline: 1px solid black
 }
-
+#layoutTable tr td.editHighlight{
+    outline: 1px solid red;
+}
 
 /*-------------------------------------------------------------------------- SIDEBAR */
 #sidebar{
@@ -68,3 +70,9 @@ textarea {
 .file:hover{
     text-decoration: underline;
 }
+
+
+
+
+
+

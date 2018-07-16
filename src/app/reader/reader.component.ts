@@ -18,6 +18,10 @@ export class ReaderComponent implements OnInit {
   ngOnInit(){
     this.getFolders();
     this.getFiles();
+
+
+    document.getElementById("testDOM").innerHTML = "HELLO";
+
   }
   
   //========================================================================================================  TOGGLE EDIT MODE
@@ -27,10 +31,10 @@ export class ReaderComponent implements OnInit {
   
   //========================================================================================================  SAVE
   save(){
-    this.dataService.saveMarkdown(this.$READER.currFile.id, this.$READER.currFile.MD, this.$READER.currFile.extra.title).subscribe();
+    this.dataService.saveMarkdown(this.$READER.currFile.id, this.$READER.currFile.MD, this.$READER.currFile.extra.title).subscribe(()=>{
+      this.listFileClick(this.$READER.currFile.id, this.$READER.currFile.index);
+    });
     this.toggleEditMode();
-    
-    //this.$READER.listFileClick(this.$READER.currFile.id, this.$READER.currFile.index);
   }
 
   //========================================================================================================  GET FOLDERS
@@ -65,6 +69,8 @@ export class ReaderComponent implements OnInit {
 
   //========================================================================================================  LIST FILE CLICK
   listFileClick(id, index){
+
+    console.log("listFileClick " + id + " - " + index);
 
     this.$READER.currFile.id = id;
     this.$READER.currFile.index = index;
